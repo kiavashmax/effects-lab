@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Effects Lab</title>
+<meta name="description" content="Twenty-four web effects. Copy CSS, and JS for the interactive ones.">
+<meta name="author" content="Kiavash (@kiavashmax)">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0a0a'/%3E%3Ccircle cx='32' cy='32' r='14' fill='none' stroke='%23f7d354' stroke-width='2'/%3E%3Ccircle cx='32' cy='32' r='4' fill='%23f7d354'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+<div class="brand">
+<h1 class="title">Effects Lab</h1>
+<p class="tag">fifty effects &middot; click to copy</p>
+</div>
+<button type="button" class="theme-btn" id="themeBtn">
+<span class="theme-icon">&#9790;</span>
+<span class="theme-label">Dark</span>
+</button>
+</header>
+
+<main class="grid">
+
+<article class="card"><div class="demo"><div class="effect-lift">Lift</div></div><div class="meta"><div class="num">01</div><h2>Lift</h2><p>Rises on hover with a deeper shadow.</p></div><button type="button" class="copy-btn" data-key="lift">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-glow">Glow</div></div><div class="meta"><div class="num">02</div><h2>Glow</h2><p>Golden halo blooms on hover.</p></div><button type="button" class="copy-btn" data-key="glow">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-shine">Shine</div></div><div class="meta"><div class="num">03</div><h2>Shine</h2><p>Light sweep crosses on hover.</p></div><button type="button" class="copy-btn" data-key="shine">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-trace">Trace</div></div><div class="meta"><div class="num">04</div><h2>Trace</h2><p>Border draws itself around.</p></div><button type="button" class="copy-btn" data-key="trace">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-glitch">GLITCH</div></div><div class="meta"><div class="num">05</div><h2>Glitch</h2><p>RGB split animates continuously.</p></div><button type="button" class="copy-btn" data-key="glitch">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-gradient-text">Gradient</div></div><div class="meta"><div class="num">06</div><h2>Gradient text</h2><p>Colors flow through the text.</p></div><button type="button" class="copy-btn" data-key="gradient-text">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-neon">NEON</div></div><div class="meta"><div class="num">07</div><h2>Neon</h2><p>Pulsing pink glow on dark.</p></div><button type="button" class="copy-btn" data-key="neon">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-stroke">Stroke</div></div><div class="meta"><div class="num">08</div><h2>Stroke</h2><p>Outline fills with color on hover.</p></div><button type="button" class="copy-btn" data-key="stroke">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-spotlight">Spotlight</div></div><div class="meta"><div class="num">09</div><h2>Spotlight</h2><p>Glow follows the pointer. <em>needs JS</em></p></div><button type="button" class="copy-btn" data-key="spotlight">Copy</button></article>
+
+<article class="card"><div class="demo"><div class="effect-magnetic">Magnetic</div></div><div class="meta"><div class="num">10</div><h2>Magnetic</h2><p>Button drifts toward the cursor. <em>needs JS</em></p></div><button type="button" class="copy-btn" data-key="magnetic">Copy</button></article>
+
+<article class="card"><div class="demo"><div class="effect-follower">Follower<span class="follower"></span></div></div><div class="meta"><div class="num">11</div><h2>Follower</h2><p>Dot trails behind the cursor. <em>needs JS</em></p></div><button type="button" class="copy-btn" data-key="follower">Copy</button></article>
+
+<article class="card"><div class="demo"><div class="effect-ripple">Click me</div></div><div class="meta"><div class="num">12</div><h2>Ripple</h2><p>Expanding ring on click. <em>needs JS</em></p></div><button type="button" class="copy-btn" data-key="ripple">Copy</button></article>
+
+<article class="card"><div class="demo"><button type="button" class="effect-btn-fill">Fill</button></div><div class="meta"><div class="num">13</div><h2>Button fill</h2><p>Background rises from below.</p></div><button type="button" class="copy-btn" data-key="btn-fill">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><button type="button" class="effect-btn-slide">Slide</button></div><div class="meta"><div class="num">14</div><h2>Button slide</h2><p>Gradient slides in from left.</p></div><button type="button" class="copy-btn" data-key="btn-slide">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><button type="button" class="effect-btn-arrow">Go <span class="arrow">&rarr;</span></button></div><div class="meta"><div class="num">15</div><h2>Button arrow</h2><p>Arrow nudges forward on hover.</p></div><button type="button" class="copy-btn" data-key="btn-arrow">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><button type="button" class="effect-btn-bounce">Bounce</button></div><div class="meta"><div class="num">16</div><h2>Button bounce</h2><p>Quick hop on hover.</p></div><button type="button" class="copy-btn" data-key="btn-bounce">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-typewriter">Hello, world...</div></div><div class="meta"><div class="num">17</div><h2>Typewriter</h2><p>Types itself with a blinking caret.</p></div><button type="button" class="copy-btn" data-key="typewriter">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-pulse"></div></div><div class="meta"><div class="num">18</div><h2>Pulse</h2><p>Radiating ring, endlessly.</p></div><button type="button" class="copy-btn" data-key="pulse">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-spinner"></div></div><div class="meta"><div class="num">19</div><h2>Spinner</h2><p>Classic rotating ring.</p></div><button type="button" class="copy-btn" data-key="spinner">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-skeleton"></div></div><div class="meta"><div class="num">20</div><h2>Skeleton</h2><p>Shimmer on placeholder bars.</p></div><button type="button" class="copy-btn" data-key="skeleton">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-gradient-anim"></div></div><div class="meta"><div class="num">21</div><h2>Gradient anim</h2><p>Slowly shifting color gradient.</p></div><button type="button" class="copy-btn" data-key="gradient-anim">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-mesh"></div></div><div class="meta"><div class="num">22</div><h2>Mesh</h2><p>Layered radial gradients.</p></div><button type="button" class="copy-btn" data-key="mesh">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-noise"></div></div><div class="meta"><div class="num">23</div><h2>Noise</h2><p>SVG grain texture overlay.</p></div><button type="button" class="copy-btn" data-key="noise">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-aurora"></div></div><div class="meta"><div class="num">24</div><h2>Aurora</h2><p>Soft drifting light bands.</p></div><button type="button" class="copy-btn" data-key="aurora">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-conic">Conic</div></div><div class="meta"><div class="num">25</div><h2>Conic</h2><p>Spinning gradient border.</p></div><button type="button" class="copy-btn" data-key="conic">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-rainbow">RAINBOW</div></div><div class="meta"><div class="num">26</div><h2>Rainbow</h2><p>Full ROYGBIV text cycle.</p></div><button type="button" class="copy-btn" data-key="rainbow">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-underline-draw">Hover me</div></div><div class="meta"><div class="num">27</div><h2>Underline draw</h2><p>Line grows from the left.</p></div><button type="button" class="copy-btn" data-key="underline-draw">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-bounce-in">Bounce</div></div><div class="meta"><div class="num">28</div><h2>Bounce in</h2><p>Looping bounce entrance.</p></div><button type="button" class="copy-btn" data-key="bounce-in">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-shake">Shake</div></div><div class="meta"><div class="num">29</div><h2>Shake</h2><p>Shakes on hover.</p></div><button type="button" class="copy-btn" data-key="shake">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-heartbeat">BPM</div></div><div class="meta"><div class="num">30</div><h2>Heartbeat</h2><p>Double-thump pulse.</p></div><button type="button" class="copy-btn" data-key="heartbeat">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-flip">Flip me</div></div><div class="meta"><div class="num">31</div><h2>Flip</h2><p>Y-axis rotation on hover.</p></div><button type="button" class="copy-btn" data-key="flip">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-tilt-3d">Tilt</div></div><div class="meta"><div class="num">32</div><h2>Tilt 3D</h2><p>Perspective tilt with offset shadow.</p></div><button type="button" class="copy-btn" data-key="tilt-3d">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-shadow-stack">Stack</div></div><div class="meta"><div class="num">33</div><h2>Shadow stack</h2><p>Four-layer offset shadow.</p></div><button type="button" class="copy-btn" data-key="shadow-stack">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-marquee"></div></div><div class="meta"><div class="num">34</div><h2>Marquee</h2><p>Infinite scroll, no JS.</p></div><button type="button" class="copy-btn" data-key="marquee">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-grid"></div></div><div class="meta"><div class="num">35</div><h2>Grid</h2><p>Animated grid backdrop.</p></div><button type="button" class="copy-btn" data-key="grid">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-dots"></div></div><div class="meta"><div class="num">36</div><h2>Dots</h2><p>Polka dot pattern.</p></div><button type="button" class="copy-btn" data-key="dots">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-scanline">SYSTEM</div></div><div class="meta"><div class="num">37</div><h2>Scanline</h2><p>CRT monitor effect.</p></div><button type="button" class="copy-btn" data-key="scanline">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-blob"></div></div><div class="meta"><div class="num">38</div><h2>Blob</h2><p>Morphing organic shape.</p></div><button type="button" class="copy-btn" data-key="blob">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-glass">Glass</div></div><div class="meta"><div class="num">39</div><h2>Glass</h2><p>Frosted panel with blur.</p></div><button type="button" class="copy-btn" data-key="glass">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-beam">Beam</div></div><div class="meta"><div class="num">40</div><h2>Beam</h2><p>Light beam around the border.</p></div><button type="button" class="copy-btn" data-key="beam">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-retro-3d">RETRO</div></div><div class="meta"><div class="num">41</div><h2>Retro 3D</h2><p>Long multi-color shadow.</p></div><button type="button" class="copy-btn" data-key="retro-3d">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-float">Float</div></div><div class="meta"><div class="num">42</div><h2>Float</h2><p>Gentle bob animation.</p></div><button type="button" class="copy-btn" data-key="float">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-rotate-in">Rotate</div></div><div class="meta"><div class="num">43</div><h2>Rotate in</h2><p>Rotating entrance loop.</p></div><button type="button" class="copy-btn" data-key="rotate-in">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-zigzag">Zigzag</div></div><div class="meta"><div class="num">44</div><h2>Zigzag</h2><p>Teeth on top and bottom.</p></div><button type="button" class="copy-btn" data-key="zigzag">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-glow-border">Glow</div></div><div class="meta"><div class="num">45</div><h2>Glow border</h2><p>Border glows on loop.</p></div><button type="button" class="copy-btn" data-key="glow-border">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-neon-border">NEON</div></div><div class="meta"><div class="num">46</div><h2>Neon border</h2><p>Pulsing neon outline.</p></div><button type="button" class="copy-btn" data-key="neon-border">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-hologram">Holo</div></div><div class="meta"><div class="num">47</div><h2>Hologram</h2><p>Iridescent gradient shift.</p></div><button type="button" class="copy-btn" data-key="hologram">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-strobe">STROBE</div></div><div class="meta"><div class="num">48</div><h2>Strobe</h2><p>Two-color step flicker.</p></div><button type="button" class="copy-btn" data-key="strobe">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-bounce-ball"></div></div><div class="meta"><div class="num">49</div><h2>Bounce ball</h2><p>Ball bobbing, endlessly.</p></div><button type="button" class="copy-btn" data-key="bounce-ball">Copy CSS</button></article>
+
+<article class="card"><div class="demo"><div class="effect-dots-loader"><span></span><span></span><span></span></div></div><div class="meta"><div class="num">50</div><h2>Dots loader</h2><p>Three dots in sequence.</p></div><button type="button" class="copy-btn" data-key="dots-loader">Copy CSS</button></article></main>
+
+<footer class="foot">
+<span class="hint">Hover or click any tile.</span>
+<span class="copy">&copy; 2026 <a href="https://github.com/kiavashmax" target="_blank" rel="noopener">@kiavashmax</a> &middot; MIT</span>
+</footer>
+
+<div hidden id="js-snippets">
+<script type="text/plain" data-key="spotlight">
+document.querySelectorAll(".effect-spotlight").forEach(el => {
+  el.addEventListener("pointermove", e => {
+    const r = el.getBoundingClientRect();
+    el.style.setProperty("--mx", ((e.clientX - r.left) / r.width * 100) + "%");
+    el.style.setProperty("--my", ((e.clientY - r.top) / r.height * 100) + "%");
+  });
+});
+</script>
+<script type="text/plain" data-key="magnetic">
+document.querySelectorAll(".effect-magnetic").forEach(el => {
+  el.addEventListener("pointermove", e => {
+    const r = el.getBoundingClientRect();
+    const x = (e.clientX - r.left - r.width / 2) * 0.35;
+    const y = (e.clientY - r.top - r.height / 2) * 0.35;
+    el.style.transform = "translate(" + x + "px, " + y + "px)";
+  });
+  el.addEventListener("pointerleave", () => {
+    el.style.transform = "";
+  });
+});
+</script>
+<script type="text/plain" data-key="follower">
+document.querySelectorAll(".effect-follower").forEach(el => {
+  const dot = el.querySelector(".follower");
+  const r = el.getBoundingClientRect();
+  let x = r.width / 2, y = r.height / 2, tx = x, ty = y;
+  el.addEventListener("pointermove", e => {
+    const b = el.getBoundingClientRect();
+    tx = e.clientX - b.left;
+    ty = e.clientY - b.top;
+  });
+  (function tick() {
+    x += (tx - x) * 0.2;
+    y += (ty - y) * 0.2;
+    dot.style.left = x + "px";
+    dot.style.top = y + "px";
+    requestAnimationFrame(tick);
+  })();
+});
+</script>
+<script type="text/plain" data-key="ripple">
+document.querySelectorAll(".effect-ripple").forEach(el => {
+  el.addEventListener("pointerdown", e => {
+    const r = el.getBoundingClientRect();
+    const size = Math.max(r.width, r.height) * 2;
+    const span = document.createElement("span");
+    span.className = "ripple";
+    span.style.width = span.style.height = size + "px";
+    span.style.left = (e.clientX - r.left) + "px";
+    span.style.top = (e.clientY - r.top) + "px";
+    el.appendChild(span);
+    setTimeout(() => span.remove(), 700);
+  });
+});
+</script>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

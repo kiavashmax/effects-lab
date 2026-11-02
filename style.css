@@ -1,0 +1,293 @@
+/* theme tokens */
+:root,html[data-theme="dark"]{
+    --bg:#0a0a0a;
+    --bg-gradient:radial-gradient(circle at 50% 0%,#141414 0%,#0a0a0a 60%);
+    --surface:#111;
+    --surface-2:#1a1a1a;
+    --border:#1e1e1e;
+    --border-strong:#333;
+    --hover:#333;
+    --fg:#e8e8e8;
+    --muted:#666;
+    --gold:#f7d354;
+    --gold-dim:rgba(247,211,84,.45);
+    --gold-faint:rgba(247,211,84,.15);
+}
+html[data-theme="light"]{
+    --bg:#f4f4f5;
+    --bg-gradient:radial-gradient(circle at 50% 0%,#ffffff 0%,#f4f4f5 60%);
+    --surface:#ffffff;
+    --surface-2:#efeff2;
+    --border:#e4e4e7;
+    --border-strong:#c8c8cf;
+    --hover:#d4d4d8;
+    --fg:#18181b;
+    --muted:#71717a;
+    --gold:#c48c0a;
+    --gold-dim:rgba(196,140,10,.45);
+    --gold-faint:rgba(196,140,10,.14);
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--bg);background-image:var(--bg-gradient);color:var(--fg);font-family:ui-sans-serif,system-ui,"SF Pro",Inter,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;transition:background-color .25s,color .25s}
+body{display:flex;flex-direction:column;padding:max(40px,env(safe-area-inset-top)) 24px 40px;gap:32px;min-height:100vh}
+
+/* header */
+.top{max-width:1100px;margin:0 auto;width:100%;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
+.brand{min-width:0}
+.title{margin:0;font-size:13px;font-weight:600;letter-spacing:.42em;text-transform:uppercase}
+.tag{margin:8px 0 0;font-size:12px;letter-spacing:.14em;color:var(--muted)}
+.theme-btn{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);color:var(--fg);font:inherit;font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:8px 14px;border-radius:999px;cursor:pointer;transition:border-color .15s}
+.theme-btn:hover{border-color:var(--border-strong)}
+.theme-icon{font-size:14px;line-height:1;color:var(--gold)}
+
+/* grid + cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px;max-width:1100px;margin:0 auto;width:100%}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:16px;opacity:0;transform:translateY(20px);transition:border-color .2s,background-color .25s}
+.card.in{animation:cardIn .55s ease forwards}
+@keyframes cardIn{to{opacity:1;transform:none}}
+.card:hover{border-color:var(--border-strong)}
+.demo{min-height:160px;display:flex;align-items:center;justify-content:center;padding:8px}
+.meta .num{font-size:10px;color:var(--muted);letter-spacing:.1em;margin-bottom:4px;opacity:.7}
+.meta h2{margin:0;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase}
+.meta p{margin:6px 0 0;font-size:12px;color:var(--muted);line-height:1.5}
+.meta em{color:var(--gold);font-style:normal;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+.copy-btn{background:transparent;border:1px solid var(--border);color:var(--muted);font:inherit;font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:7px 12px;border-radius:6px;cursor:pointer;align-self:flex-start;margin-top:auto;transition:border-color .15s,color .15s}
+.copy-btn:hover{border-color:var(--border-strong);color:var(--fg)}
+.copy-btn.copied{border-color:#5ddc9f;color:#5ddc9f}
+
+/* footer */
+.foot{max-width:1100px;margin:0 auto;width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-top:24px;border-top:1px solid var(--border);font-size:11px;color:var(--muted);letter-spacing:.14em}
+.foot .hint{text-transform:uppercase}
+.foot .copy a{color:var(--gold);text-decoration:none;transition:opacity .15s}
+.foot .copy a:hover{opacity:.75;text-decoration:underline}
+@media(max-width:520px){.foot{justify-content:center;text-align:center}}
+
+/* === 01 lift === */
+.effect-lift{display:flex;align-items:center;justify-content:center;width:80%;height:80px;background:var(--surface-2);border:1px solid var(--border);border-radius:12px;color:var(--fg);font-size:14px;letter-spacing:.1em;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+.effect-lift:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 20px 40px rgba(0,0,0,.15),0 0 24px var(--gold-faint)}
+
+/* === 02 glow === */
+.effect-glow{display:flex;align-items:center;justify-content:center;width:80%;height:80px;background:var(--surface-2);border:1px solid var(--border);border-radius:12px;color:var(--fg);font-size:14px;letter-spacing:.1em;transition:box-shadow .3s ease,border-color .3s ease}
+.effect-glow:hover{border-color:var(--gold);box-shadow:0 0 30px var(--gold-dim),0 0 60px var(--gold-faint)}
+
+/* === 03 shine === */
+.effect-shine{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;width:80%;height:80px;background:var(--surface-2);border:1px solid var(--border);border-radius:12px;color:var(--fg);font-size:14px;letter-spacing:.1em}
+.effect-shine::before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);transform:translateX(-100%);transition:transform .7s ease;pointer-events:none}
+.effect-shine:hover::before{transform:translateX(100%)}
+
+/* === 04 trace === */
+.effect-trace{position:relative;display:flex;align-items:center;justify-content:center;width:80%;height:80px;background:var(--surface-2);border-radius:12px;color:var(--fg);font-size:14px;letter-spacing:.1em}
+.effect-trace::before{content:"";position:absolute;inset:0;border:1.5px solid var(--gold);border-radius:inherit;clip-path:inset(0 0 100% 0);transition:clip-path .5s ease}
+.effect-trace:hover::before{clip-path:inset(0 0 0 0)}
+
+/* === 05 glitch === */
+.effect-glitch{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:22px;font-weight:700;letter-spacing:.2em;color:var(--fg);animation:glitchAnim 2s infinite}
+@keyframes glitchAnim{
+    0%,100%{text-shadow:.05em 0 0 #ff006e,-.05em -.025em 0 #00d4ff}
+    25%{text-shadow:-.05em -.025em 0 #ff006e,.05em .025em 0 #00d4ff}
+    50%{text-shadow:.025em .05em 0 #ff006e,-.025em -.05em 0 #00d4ff}
+    75%{text-shadow:-.05em .025em 0 #ff006e,.05em -.025em 0 #00d4ff}
+}
+
+/* === 06 gradient-text === */
+.effect-gradient-text{font-size:22px;font-weight:700;letter-spacing:.04em;background:linear-gradient(90deg,#ff6b35,#f7d354,#ff2fb3,#667eea,#ff6b35);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:gradient-textShift 4s linear infinite}
+@keyframes gradient-textShift{to{background-position:300% 0}}
+
+/* === 07 neon === */
+.effect-neon{font-size:22px;font-weight:700;letter-spacing:.2em;color:#fff;animation:neonFlicker 1.5s infinite alternate}
+@keyframes neonFlicker{
+    from{text-shadow:0 0 5px #ff2fb3,0 0 10px #ff2fb3,0 0 20px #ff2fb3}
+    to{text-shadow:0 0 10px #ff2fb3,0 0 20px #ff2fb3,0 0 40px #ff2fb3,0 0 80px #ff2fb3}
+}
+
+/* === 08 stroke === */
+.effect-stroke{font-size:26px;font-weight:800;letter-spacing:.1em;color:transparent;-webkit-text-stroke:1.5px var(--gold);transition:color .3s ease}
+.effect-stroke:hover{color:var(--gold)}
+
+/* === 09 spotlight (needs JS) === */
+.effect-spotlight{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;width:80%;height:80px;background:var(--surface-2);border:1px solid var(--border);border-radius:12px;color:var(--fg);font-size:14px;letter-spacing:.1em}
+.effect-spotlight::before{content:"";position:absolute;inset:0;background:radial-gradient(circle 80px at var(--mx,50%) var(--my,50%),var(--gold-dim),transparent 70%);opacity:0;transition:opacity .3s;pointer-events:none}
+.effect-spotlight:hover::before{opacity:1}
+
+/* === 10 magnetic (needs JS) === */
+.effect-magnetic{display:inline-flex;align-items:center;justify-content:center;padding:14px 28px;background:var(--surface-2);border:1px solid var(--border);border-radius:8px;color:var(--fg);font-size:14px;letter-spacing:.1em;transition:transform .15s ease-out,border-color .2s,box-shadow .2s;will-change:transform}
+.effect-magnetic:hover{border-color:var(--gold);box-shadow:0 0 20px var(--gold-faint)}
+
+/* === 11 follower (needs JS) === */
+.effect-follower{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;width:80%;height:80px;background:var(--surface-2);border:1px solid var(--border);border-radius:12px;color:var(--fg);font-size:14px;letter-spacing:.1em;cursor:crosshair}
+.effect-follower .follower{position:absolute;top:50%;left:50%;width:24px;height:24px;border-radius:50%;background:var(--gold);opacity:0;transform:translate(-50%,-50%);transition:opacity .2s;pointer-events:none;mix-blend-mode:difference}
+.effect-follower:hover .follower{opacity:1}
+
+/* === 12 ripple (needs JS) === */
+.effect-ripple{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;width:80%;height:80px;background:var(--surface-2);border:1px solid var(--border);border-radius:12px;color:var(--fg);font-size:14px;letter-spacing:.1em;cursor:pointer;user-select:none}
+.effect-ripple .ripple{position:absolute;border-radius:50%;background:var(--gold-dim);transform:translate(-50%,-50%) scale(0);pointer-events:none;animation:rippleAnim .7s ease-out forwards}
+@keyframes rippleAnim{to{transform:translate(-50%,-50%) scale(1);opacity:0}}
+
+/* === 13 btn-fill === */
+.effect-btn-fill{position:relative;overflow:hidden;background:transparent;border:1.5px solid var(--gold);color:var(--gold);padding:12px 28px;border-radius:8px;font:inherit;font-size:13px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;z-index:0;transition:color .3s}
+.effect-btn-fill::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--gold);transform:translateY(100%);transition:transform .3s ease}
+.effect-btn-fill:hover{color:#0a0a0a}
+.effect-btn-fill:hover::before{transform:translateY(0)}
+
+/* === 14 btn-slide === */
+.effect-btn-slide{position:relative;overflow:hidden;background:var(--surface-2);border:none;color:var(--fg);padding:12px 28px;border-radius:8px;font:inherit;font-size:13px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;z-index:0;transition:color .3s}
+.effect-btn-slide::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#667eea,#f093fb);transform:translateX(-100%);transition:transform .3s ease}
+.effect-btn-slide:hover{color:#fff}
+.effect-btn-slide:hover::before{transform:translateX(0)}
+
+/* === 15 btn-arrow === */
+.effect-btn-arrow{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#0a0a0a;border:none;padding:12px 24px;border-radius:8px;font:inherit;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+.effect-btn-arrow .arrow{display:inline-block;transition:transform .25s ease}
+.effect-btn-arrow:hover .arrow{transform:translateX(6px)}
+
+/* === 16 btn-bounce === */
+.effect-btn-bounce{background:var(--gold);color:#0a0a0a;border:none;padding:12px 28px;border-radius:8px;font:inherit;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+.effect-btn-bounce:hover{animation:btn-bounceAnim .6s ease}
+@keyframes btn-bounceAnim{0%,100%{transform:translateY(0)}30%{transform:translateY(-8px)}60%{transform:translateY(-3px)}}
+
+/* === 17 typewriter === */
+.effect-typewriter{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:15px;color:var(--fg);display:inline-block;overflow:hidden;white-space:nowrap;width:0;border-right:2px solid var(--gold);animation:typewriterType 3s steps(16) infinite,typewriterCaret .8s step-end infinite}
+@keyframes typewriterType{0%{width:0}45%,100%{width:15ch}}
+@keyframes typewriterCaret{50%{border-color:transparent}}
+
+/* === 18 pulse === */
+.effect-pulse{width:56px;height:56px;border-radius:50%;background:var(--gold);animation:pulseRing 2s ease-out infinite}
+@keyframes pulseRing{0%{box-shadow:0 0 0 0 rgba(247,211,84,.5)}100%{box-shadow:0 0 0 30px rgba(247,211,84,0)}}
+
+/* === 19 spinner === */
+.effect-spinner{width:44px;height:44px;border:3px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:spinnerSpin 1s linear infinite}
+@keyframes spinnerSpin{to{transform:rotate(360deg)}}
+
+/* === 20 skeleton === */
+.effect-skeleton{width:80%;height:90px;padding:16px;background:var(--surface-2);border-radius:10px;display:flex;flex-direction:column;gap:12px;justify-content:center}
+.effect-skeleton::before,.effect-skeleton::after{content:"";height:12px;border-radius:6px;background:linear-gradient(90deg,var(--border),var(--border-strong),var(--border));background-size:200% 100%;animation:skeletonShimmer 1.5s linear infinite}
+.effect-skeleton::before{width:80%}
+.effect-skeleton::after{width:55%}
+@keyframes skeletonShimmer{to{background-position:-200% 0}}
+
+/* === 21 gradient-anim === */
+.effect-gradient-anim{width:100%;height:100%;border-radius:12px;background:linear-gradient(135deg,#667eea,#f093fb,#4facfe,#43e97b,#667eea);background-size:300% 300%;animation:gradient-animShift 8s ease infinite}
+@keyframes gradient-animShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+
+/* === 22 mesh === */
+.effect-mesh{width:100%;height:100%;border-radius:12px;background:radial-gradient(at 20% 30%,#667eea 0,transparent 50%),radial-gradient(at 80% 20%,#f093fb 0,transparent 50%),radial-gradient(at 40% 80%,#4facfe 0,transparent 50%),radial-gradient(at 90% 90%,#43e97b 0,transparent 50%),#0a0a1a}
+
+/* === 23 noise === */
+.effect-noise{width:100%;height:100%;border-radius:12px;background-color:var(--surface-2);background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E")}
+
+/* === 24 aurora === */
+.effect-aurora{position:relative;overflow:hidden;width:100%;height:100%;border-radius:12px;background-color:#0a0a1a}
+.effect-aurora::before{content:"";position:absolute;inset:-10%;background-image:radial-gradient(ellipse 60% 40% at 20% 50%,#00ff88 0,transparent 70%),radial-gradient(ellipse 60% 40% at 60% 70%,#00d4ff 0,transparent 70%),radial-gradient(ellipse 60% 40% at 80% 30%,#ff2fb3 0,transparent 70%);background-size:200% 200%;animation:auroraShift 8s ease-in-out infinite;filter:blur(20px)}
+@keyframes auroraShift{0%,100%{background-position:0% 0%,100% 100%,50% 0%}50%{background-position:100% 100%,0% 0%,50% 100%}}/* 25 conic */
+.effect-conic{display:flex;align-items:center;justify-content:center;width:80%;height:80px;border-radius:12px;color:var(--fg);font-size:14px;letter-spacing:.1em;background:linear-gradient(var(--surface-2),var(--surface-2)) padding-box,linear-gradient(120deg,var(--gold),#667eea,#f093fb,#ff2fb3,var(--gold)) border-box;border:2px solid transparent;background-size:auto,300% 300%;animation:conicShift 4s ease infinite}
+@keyframes conicShift{0%,100%{background-position:0 0,0% 50%}50%{background-position:0 0,100% 50%}}
+
+/* 26 rainbow */
+.effect-rainbow{font-size:24px;font-weight:800;letter-spacing:.04em;background:linear-gradient(90deg,#ff0000,#ff7f00,#ffff00,#00ff00,#0000ff,#4b0082,#9400d3,#ff0000);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:rainbowShift 3s linear infinite}
+@keyframes rainbowShift{to{background-position:200% 0}}
+
+/* 27 underline-draw */
+.effect-underline-draw{position:relative;font-size:20px;color:var(--fg);letter-spacing:.05em;cursor:pointer;padding-bottom:6px}
+.effect-underline-draw::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+.effect-underline-draw:hover::after{transform:scaleX(1)}
+
+/* 28 bounce-in */
+.effect-bounce-in{display:flex;align-items:center;justify-content:center;width:80%;height:80px;background:var(--surface-2);border-radius:12px;color:var(--fg);font-size:14px;letter-spacing:.1em;animation:bounceInAnim 2s ease infinite}
+@keyframes bounceInAnim{0%,20%,50%,80%,100%{transform:translateY(0)}40%{transform:translateY(-20px)}60%{transform:translateY(-10px)}}
+
+/* 29 shake */
+.effect-shake{display:flex;align-items:center;justify-content:center;width:80%;height:80px;background:var(--surface-2);border-radius:12px;color:var(--fg);font-size:14px;letter-spacing:.1em}
+.effect-shake:hover{animation:shakeAnim .5s ease}
+@keyframes shakeAnim{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+
+/* 30 heartbeat */
+.effect-heartbeat{display:flex;align-items:center;justify-content:center;width:80px;height:80px;border-radius:50%;background:var(--gold);color:#0a0a0a;font-size:12px;font-weight:700;animation:heartbeatAnim 1.4s ease infinite}
+@keyframes heartbeatAnim{0%,100%{transform:scale(1)}14%,28%{transform:scale(1.15)}42%{transform:scale(1)}70%{transform:scale(1.1)}}
+
+/* 31 flip */
+.effect-flip{display:flex;align-items:center;justify-content:center;width:80%;height:80px;background:var(--surface-2);border:1px solid var(--border);border-radius:12px;color:var(--fg);font-size:14px;letter-spacing:.1em;transition:transform .7s ease;transform-style:preserve-3d}
+.effect-flip:hover{transform:rotateY(360deg)}
+
+/* 32 tilt-3d */
+.effect-tilt-3d{display:flex;align-items:center;justify-content:center;width:80%;height:80px;background:var(--surface-2);border-radius:12px;color:var(--fg);font-size:14px;letter-spacing:.1em;transition:transform .3s ease,box-shadow .3s ease}
+.effect-tilt-3d:hover{transform:perspective(500px) rotateX(8deg) rotateY(-10deg) scale(1.03);box-shadow:20px 20px 40px rgba(0,0,0,.2),-10px -10px 40px var(--gold-faint)}
+
+/* 33 shadow-stack */
+.effect-shadow-stack{display:flex;align-items:center;justify-content:center;width:80%;height:80px;background:var(--gold);border-radius:12px;color:#0a0a0a;font-size:14px;font-weight:600;letter-spacing:.1em;box-shadow:5px 5px 0 #ff6b35,10px 10px 0 #ff2fb3,15px 15px 0 #667eea,20px 20px 0 #4facfe;transition:transform .3s ease,box-shadow .3s ease}
+.effect-shadow-stack:hover{transform:translate(-5px,-5px);box-shadow:10px 10px 0 #ff6b35,20px 20px 0 #ff2fb3,30px 30px 0 #667eea,40px 40px 0 #4facfe}
+
+/* 34 marquee */
+.effect-marquee{overflow:hidden;width:100%;background:var(--surface-2);border-radius:12px;padding:24px 0;color:var(--fg);font-size:14px;letter-spacing:.1em;white-space:nowrap}
+.effect-marquee::before{content:"SCROLLING TEXT   .   INFINITE   .   NO JS   .   ";display:inline-block;padding-left:100%;animation:marqueeAnim 8s linear infinite}
+@keyframes marqueeAnim{to{transform:translateX(-100%)}}
+
+/* 35 grid */
+.effect-grid{width:100%;height:100%;border-radius:12px;background-color:var(--surface-2);background-image:linear-gradient(var(--gold-faint) 1px,transparent 1px),linear-gradient(90deg,var(--gold-faint) 1px,transparent 1px);background-size:20px 20px;animation:gridScroll 3s linear infinite}
+@keyframes gridScroll{from{background-position:0 0,0 0}to{background-position:20px 20px,20px 20px}}
+
+/* 36 dots */
+.effect-dots{width:100%;height:100%;border-radius:12px;background-color:var(--surface-2);background-image:radial-gradient(circle,var(--gold-faint) 1.5px,transparent 2px);background-size:16px 16px;animation:dotsScroll 3s linear infinite}
+@keyframes dotsScroll{from{background-position:0 0}to{background-position:16px 16px}}
+
+/* 37 scanline */
+.effect-scanline{position:relative;overflow:hidden;width:100%;height:100%;border-radius:12px;background:#000;color:#0f0;display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:14px;letter-spacing:.1em}
+.effect-scanline::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(to bottom,rgba(0,255,0,.15) 0,rgba(0,255,0,.15) 1px,transparent 1px,transparent 3px);pointer-events:none}
+.effect-scanline::after{content:"";position:absolute;left:0;right:0;height:80px;background:linear-gradient(to bottom,transparent,rgba(0,255,0,.3),transparent);animation:scanlineAnim 2s linear infinite}
+@keyframes scanlineAnim{from{top:-80px}to{top:100%}}
+
+/* 38 blob */
+.effect-blob{width:100px;height:100px;background:linear-gradient(135deg,var(--gold),#ff6b35);border-radius:60% 40% 30% 70% / 60% 30% 70% 40%;animation:blobMorph 6s ease-in-out infinite}
+@keyframes blobMorph{0%,100%{border-radius:60% 40% 30% 70% / 60% 30% 70% 40%}50%{border-radius:30% 60% 70% 40% / 50% 60% 30% 60%}}
+
+/* 39 glass */
+.effect-glass{display:flex;align-items:center;justify-content:center;width:80%;height:80px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:12px;color:var(--fg);font-size:14px;letter-spacing:.1em;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 8px 32px rgba(0,0,0,.1)}
+
+/* 40 beam */
+.effect-beam{position:relative;display:flex;align-items:center;justify-content:center;width:80%;height:80px;background:var(--surface-2);border-radius:12px;color:var(--fg);font-size:14px;letter-spacing:.1em;overflow:hidden}
+.effect-beam::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:2px;background:conic-gradient(from 0deg,transparent 0 340deg,var(--gold) 360deg);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:beamSpin 3s linear infinite}
+@keyframes beamSpin{to{transform:rotate(360deg)}}
+
+/* 41 retro-3d */
+.effect-retro-3d{font-size:24px;font-weight:900;letter-spacing:.1em;color:var(--gold);text-shadow:2px 2px 0 #ff6b35,4px 4px 0 #ff2fb3,6px 6px 0 #667eea,8px 8px 0 #4facfe,10px 10px 20px rgba(0,0,0,.4)}
+
+/* 42 float */
+.effect-float{display:flex;align-items:center;justify-content:center;width:80%;height:80px;background:var(--surface-2);border-radius:12px;color:var(--fg);font-size:14px;letter-spacing:.1em;animation:floatBob 3s ease-in-out infinite;box-shadow:0 10px 30px var(--gold-faint)}
+@keyframes floatBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+/* 43 rotate-in */
+.effect-rotate-in{display:flex;align-items:center;justify-content:center;width:80%;height:80px;background:var(--surface-2);border-radius:12px;color:var(--fg);font-size:14px;letter-spacing:.1em;animation:rotateInAnim 3s ease infinite}
+@keyframes rotateInAnim{0%{transform:rotate(-90deg) scale(.5);opacity:0}30%,70%{transform:rotate(0) scale(1);opacity:1}100%{transform:rotate(90deg) scale(.5);opacity:0}}
+
+/* 44 zigzag */
+.effect-zigzag{position:relative;display:flex;align-items:center;justify-content:center;width:80%;height:60px;background:var(--surface-2);color:var(--fg);font-size:14px;letter-spacing:.1em;margin:10px 0}
+.effect-zigzag::before,.effect-zigzag::after{content:"";position:absolute;left:0;right:0;height:10px;background:linear-gradient(135deg,var(--gold) 50%,transparent 50%) 0 0/20px 20px,linear-gradient(45deg,transparent 50%,var(--gold) 50%) 10px 0/20px 20px}
+.effect-zigzag::before{top:-10px}
+.effect-zigzag::after{bottom:-10px;transform:scaleY(-1)}
+
+/* 45 glow-border */
+.effect-glow-border{display:flex;align-items:center;justify-content:center;width:80%;height:80px;background:var(--surface-2);border:2px solid var(--gold);border-radius:12px;color:var(--fg);font-size:14px;letter-spacing:.1em;animation:glowBorderAnim 2s ease-in-out infinite alternate}
+@keyframes glowBorderAnim{from{box-shadow:0 0 10px var(--gold-dim),inset 0 0 10px var(--gold-faint)}to{box-shadow:0 0 30px var(--gold-dim),0 0 60px var(--gold-faint),inset 0 0 20px var(--gold-faint)}}
+
+/* 46 neon-border */
+.effect-neon-border{display:flex;align-items:center;justify-content:center;width:80%;height:80px;background:#050510;border:2px solid #ff2fb3;border-radius:12px;color:#fff;font-size:14px;letter-spacing:.2em;box-shadow:0 0 10px #ff2fb3,inset 0 0 10px #ff2fb3,0 0 20px #ff2fb3,inset 0 0 20px rgba(255,47,179,.3);animation:neonBorderPulse 1.5s ease-in-out infinite alternate}
+@keyframes neonBorderPulse{to{box-shadow:0 0 20px #ff2fb3,inset 0 0 20px #ff2fb3,0 0 40px #ff2fb3,0 0 80px #ff2fb3,inset 0 0 40px rgba(255,47,179,.5)}}
+
+/* 47 hologram */
+.effect-hologram{display:flex;align-items:center;justify-content:center;width:80%;height:80px;border-radius:12px;color:#fff;font-size:14px;letter-spacing:.1em;background:linear-gradient(135deg,#ff2fb3,#667eea,#4facfe,#43e97b,#ff2fb3);background-size:300% 300%;animation:hologramShift 4s ease infinite;text-shadow:0 2px 4px rgba(0,0,0,.4);box-shadow:inset 0 0 20px rgba(255,255,255,.2),0 10px 30px rgba(102,126,234,.3)}
+@keyframes hologramShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+
+/* 48 strobe */
+.effect-strobe{display:flex;align-items:center;justify-content:center;width:80%;height:80px;background:var(--gold);border-radius:12px;color:#0a0a0a;font-size:14px;font-weight:700;letter-spacing:.2em;animation:strobeAnim 1s steps(2) infinite}
+@keyframes strobeAnim{0%,50%{background:var(--gold);color:#0a0a0a}51%,100%{background:#ff2fb3;color:#fff}}
+
+/* 49 bounce-ball */
+.effect-bounce-ball{position:relative;width:100%;height:100%;display:flex;align-items:flex-end;justify-content:center;padding-bottom:20px}
+.effect-bounce-ball::before{content:"";width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#ff6b35,var(--gold));animation:bounceBallAnim 1s ease-in-out infinite}
+@keyframes bounceBallAnim{0%,100%{transform:translateY(-40px)}50%{transform:translateY(0)}}
+
+/* 50 dots-loader */
+.effect-dots-loader{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:80px;min-width:120px;background:var(--surface-2);border-radius:12px;padding:0 24px}
+.effect-dots-loader > span{width:10px;height:10px;border-radius:50%;background:var(--gold);animation:dotBounce 1.2s ease-in-out infinite}
+.effect-dots-loader > span:nth-child(2){animation-delay:.15s}
+.effect-dots-loader > span:nth-child(3){animation-delay:.3s}
+@keyframes dotBounce{0%,80%,100%{transform:scale(.6);opacity:.5}40%{transform:scale(1);opacity:1}}
